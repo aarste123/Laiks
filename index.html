@@ -4,9 +4,55 @@
         <title>Laiks</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>* {box-sizing: border-box}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Attēls {background-color: red;}
+#Saraksts {background-color: green;}
+
+</style></style>
     </head>
     <body>
-        <div>
+<button class="tablink" onclick="openPage('Attēls', this, 'red')">Attēls</button>
+<button class="tablink" onclick="openPage('Saraksts', this, 'green')" id="defaultOpen">Saraksts</button>
+       <div id="Attēls" class="tabcontent">
+  <h3>Saraksts</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="Saraksts" class="tabcontent">
+  <h3>Saraksts</h3>
+  <p>Some news this fine day!</p> 
+</div>
+<div>
             <a href="lietotnes.html">Laika plānošanas lietotnes</a>
         </div>
     </body>
