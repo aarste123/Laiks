@@ -4,64 +4,102 @@
         <title>Laiks</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>* {box-sizing: border-box}
+        <style>* {
+                box-sizing: border-box
+            }
 
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
+            body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Arial;
+            }
 
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
+            .tablink {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 25%;
+            }
 
-.tablink:hover {
-  background-color: #777;
-}
+            .tablink:hover {
+                background-color: #777;
+            }
 
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-}
+            .tabcontent {
+                color: white;
+                display: none;
+                padding: 100px 20px;
+                height: 100%;
+            }
 
-#Attēls {background-color: red;}
-#Saraksts {background-color: green;}
+            #Attels {
+                background-color: red;
+            }
+            #Saraksts {
+                background-color: green;
+            }
+            #Laiks{
+                background-color: blue
+            }
 
-</style></style>
+        </style>
     </head>
     <body>
-<button class="tablink" onclick="openPage('Attēls', this, 'red')">Attēls</button>
-<button class="tablink" onclick="openPage('Saraksts', this, 'green')" id="defaultOpen">Saraksts</button>
-       <div id="Attēls" class="tabcontent">
-  <h3>Saraksts</h3>
-  <p>Home is where the heart is..</p>
-</div>
+        <button class="tablink" onclick="openPage('Attels', this, 'red')">Attēls</button>
+        <button class="tablink" onclick="openPage('Saraksts', this, 'green')" id="defaultOpen">Saraksts</button>
+        <button class="tablink" onclick="openPage('Laiks', this, 'blue')">Laiks</button>
+        <div id="Attels" class="tabcontent">
+           
+            <h1>Pulkstenis</h1>
+            <img src=https://d2rbyiw1vv51io.cloudfront.net/web/ikea4/images/131/1013114_PE829054_S5.jpg alt="Pulkstenis" 
+                width='600' height='600' >
+            <div>
+                <a href="lietotnes.html">Laika plānošanas lietotnes</a>
+            </div>
+        </div>
 
-<div id="Saraksts" class="tabcontent">
-  <h3>Saraksts</h3>
-  <p>Some news this fine day!</p> 
-</div>
-<div>
-            <a href="lietotnes.html">Laika plānošanas lietotnes</a>
+        <div id="Saraksts" class="tabcontent">
+            <h3>Saraksts</h3>
+            <p>Some news this fine day!</p> 
+        </div>
+        <div id="Attels" class="tabcontent">
+            
+        </div>
+
+        <div id="Laiks" class="tabcontent">
+            
+            <h1>Laika plānošana</h1>
+            <p>Sen jau visiem ir skaidrs, ka efektīva laika saplānošana ir puse no panākumiem, otra puse ir plāna izpilde. 
+                Ne vienmēr visu dzīvi var saplānot un ne vienmēr visu iztrādāto plānu var realizēt, bet, 
+                ja tas izdodas kaut vai uz 70 %, tad noteikti dzīves kvalitāte uzlabojas un visās jomās izdodas sevi realizēt. 
+                Es cenšos saplānot lielās lietas, tāpat arī cenšos sarakstīt plānotājā visas tikšanās, bet dažkārt man liekas, 
+                ka apstākļi manu darba dienu organizē vairāk nekā es pati. 
+                Te padalīšos ar vispārzināmajiem un arī pārbaudītiem padomiem, kā palīdzēt sev izdarīt vairāk.</p>
+            <h2>Sastādi savu dienas plānu.</h2>
         </div>
     </body>
-    <h1>Laika plānošana</h1>
-    <p>Sen jau visiem ir skaidrs, ka efektīva laika saplānošana ir puse no panākumiem, otra puse ir plāna izpilde. 
-        Ne vienmēr visu dzīvi var saplānot un ne vienmēr visu iztrādāto plānu var realizēt, bet, 
-        ja tas izdodas kaut vai uz 70 %, tad noteikti dzīves kvalitāte uzlabojas un visās jomās izdodas sevi realizēt. 
-        Es cenšos saplānot lielās lietas, tāpat arī cenšos sarakstīt plānotājā visas tikšanās, bet dažkārt man liekas, 
-        ka apstākļi manu darba dienu organizē vairāk nekā es pati. 
-        Te padalīšos ar vispārzināmajiem un arī pārbaudītiem padomiem, kā palīdzēt sev izdarīt vairāk.</p>
-    <h2>Sastādi savu dienas plānu.</h2>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+    // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
 </html>
